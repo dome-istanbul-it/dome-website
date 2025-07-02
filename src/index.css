@@ -1,0 +1,249 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom Cursor System - Dynamic Arrow Cursors */
+@layer utilities {
+  .cursor-arrow-up {
+    cursor: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none'%3E%3Ccircle cx='12' cy='12' r='11' fill='rgba(0,0,0,0.7)' stroke='rgba(245,245,220,0.9)' stroke-width='1'/%3E%3Cpath d='M17 14L12 9L7 14' stroke='rgba(245,245,220,1)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") 16 16, auto;
+  }
+  
+  .cursor-arrow-down {
+    cursor: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none'%3E%3Ccircle cx='12' cy='12' r='11' fill='rgba(0,0,0,0.7)' stroke='rgba(245,245,220,0.9)' stroke-width='1'/%3E%3Cpath d='M7 10L12 15L17 10' stroke='rgba(245,245,220,1)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") 16 16, auto;
+  }
+
+  /* Fallback for browsers that don't support custom cursors */
+  @supports not (cursor: url("data:image/svg+xml")) {
+    .cursor-arrow-up {
+      cursor: n-resize;
+    }
+    
+    .cursor-arrow-down {
+      cursor: s-resize;
+    }
+  }
+
+  /* Disable custom cursors on mobile and touch devices */
+  @media (hover: none) and (pointer: coarse) {
+    .cursor-arrow-up,
+    .cursor-arrow-down {
+      cursor: auto;
+    }
+  }
+}
+
+/* Mobile scrolling optimizations */
+@layer base {
+  html {
+    /* Prevent horizontal scrolling */
+    overflow-x: hidden;
+    /* Smooth scrolling for all devices */
+    scroll-behavior: smooth;
+  }
+
+  body {
+    /* Prevent horizontal scrolling */
+    overflow-x: hidden;
+    /* Optimize touch scrolling on iOS */
+    -webkit-overflow-scrolling: touch;
+    /* Prevent text size adjustment on mobile */
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  /* Mobile-specific background image fixes */
+  @media (max-width: 768px) {
+    /* Prevent background image movement during scroll - only for fixed containers */
+    .fixed {
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      will-change: transform;
+    }
+
+    /* Ensure scroll progress indicator is properly centered on mobile */
+    .scroll-progress-indicator {
+      left: 50% !important;
+      margin-left: 0 !important;
+      /* Use CSS transform as fallback for perfect centering */
+      transform: translateX(-50%) !important;
+      -webkit-transform: translateX(-50%) !important;
+      /* Ensure content inside is also centered */
+    }
+    
+    .scroll-progress-indicator > div {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+    
+    /* Extra small mobile devices */
+    @media (max-width: 375px) {
+      .scroll-progress-indicator {
+        bottom: 1rem !important;
+      }
+    }
+
+    /* Optimize background images for mobile - lighter approach */
+    [style*="background-image"] {
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      /* Remove transforms that cause zoom issues */
+    }
+
+    /* Prevent momentum scrolling issues */
+    body {
+      position: relative;
+      /* Remove body transforms that can affect child elements */
+    }
+
+    /* Optimize touch targets */
+    a, button {
+      min-height: 44px;
+      min-width: 44px;
+    }
+
+    /* Prevent zoom on input focus */
+    input, select, textarea {
+      font-size: 16px;
+    }
+
+    /* Optimize font rendering */
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+
+    /* Mobile-specific background size optimization */
+    .motion-element[style*="background-image"] {
+      background-size: cover !important;
+      background-position: center !important;
+      background-attachment: scroll !important;
+    }
+  }
+
+  /* Performance optimizations for animations - lighter approach */
+  .motion-element {
+    will-change: transform, opacity;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    /* Remove the transform that causes zoom issues */
+  }
+
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    .text-dome-cream {
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
+  }
+}

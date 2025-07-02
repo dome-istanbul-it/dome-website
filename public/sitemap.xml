@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://dome.istanbul/</loc>
+    <lastmod>2024-12-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://dome.istanbul/og-image.jpg</image:loc>
+      <image:title>DOME Creative Agency - Influencer Marketing &amp; Video Production</image:title>
+      <image:caption>DOME is a creative agency specializing in influencer marketing, video production, and social media management.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://dome.istanbul/privacy-policy</loc>
+    <lastmod>2024-12-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://dome.istanbul/cookie-policy</loc>
+    <lastmod>2024-12-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://dome.istanbul/kvkk-clarification</loc>
+    <lastmod>2024-12-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset> 
